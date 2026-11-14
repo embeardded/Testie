@@ -67,7 +67,7 @@
 *
 * Desc  : Include a .h file if needed by output char function else uncomment
 **************************************************************************************************/
-#define TESTIE_OUTPUT_CHAR_INCLUDE          "Debug.h"
+#define TESTIE_OUTPUT_CHAR_INCLUDE          "DebugC18.h"
 
 /**************************************************************************************************
 * Name  : TESTIE_OUTPUT_CHAR (default putchar)
@@ -76,7 +76,7 @@
 *
 * Input : Character is a 7bit ASCII character
 **************************************************************************************************/
-#define TESTIE_OUTPUT_CHAR                  Debug_OutputChar
+#define TESTIE_OUTPUT_CHAR                  DebugC18_OutputChar
 
 
 /* End of module *********************************************************************************/
