@@ -1,3 +1,7 @@
+/**************************************************************************************************
+* Internal constants, default configuration and function declarations for the Testie framework
+**************************************************************************************************/
+
 #ifndef _TESTIE_INTERNALS_
 #define _TESTIE_INTERNALS_
 

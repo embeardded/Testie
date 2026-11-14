@@ -1,3 +1,8 @@
+/**************************************************************************************************
+* Unit Test framework for embedded C development.
+* This is made to support various embedded compilers and all of their deficiencies.
+**************************************************************************************************/
+
 /* Includes **************************************************************************************/
 
 #include "Testie.h"
@@ -239,7 +244,7 @@ void Testie_RunTestSuite(void (*TestSuite)(void), TESTIE_ROM const TESTIE_CHAR *
 {
     Testie.Case.Count       = 0U;
     Testie.Case.CountFailed = 0U;
-
+    
     Testie_PrintROMString(pcName);
     Testie_PrintROMString(TESTIE_OUTPUT_END_LINE);
     Testie_PrintFillLine(TESTIE_OUTPUT_FILL_CHARACTER);
@@ -281,7 +286,7 @@ void Testie_RunTestCase(void (*Test)(void), TESTIE_ROM const TESTIE_CHAR * pcNam
     TESTIE_OUTPUT_CHAR(' ');
 
     Test();
-
+    
     if (Testie.Case.CurrentPasses >= 1U && Testie.Case.CurrentFails == 0U)
     {
         Testie_PrintROMString(TESTIE_OUTPUT_CASE_PASS);
@@ -346,7 +351,7 @@ void Testie_AssertNumber(TESTIE_UINT32 ui32Expected, TESTIE_UINT32 ui32Actual, T
         }
         else
         {
-            Testie_PrintNumber(ui32Expected);
+            Testie_PrintNumber(ui32Expected);        
         }
 
 
@@ -357,7 +362,7 @@ void Testie_AssertNumber(TESTIE_UINT32 ui32Expected, TESTIE_UINT32 ui32Actual, T
         }
         else
         {
-            Testie_PrintNumber(ui32Actual);
+            Testie_PrintNumber(ui32Actual);        
         }
 
         Testie_PrintROMString(TESTIE_OUTPUT_END_LINE);
@@ -405,7 +410,7 @@ void Testie_AssertString(void * pExpected, TESTIE_CHAR * pcActual, TESTIE_UINT8 
     if (Testie_StringCompare(pExpected, (void *) pcActual, ui8IsExpectedROM) == 0)
     {
         Testie.Case.CurrentPasses++;
-    }
+    } 
     else
     {
         if (Testie.Case.CurrentFails++ == 0)

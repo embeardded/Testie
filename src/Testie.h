@@ -1,5 +1,10 @@
+/**************************************************************************************************
+* Unit Test framework for embedded C development.
+* This is made to support various embedded compilers and all of their deficiencies.
+**************************************************************************************************/
+
 #ifndef _TESTIE_
-#define _TESTIE_
+#define _TESTIE_ 
 
 /* Includes **************************************************************************************/
 
