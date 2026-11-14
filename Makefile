@@ -1,8 +1,8 @@
 # *************************************************************************************************
 # Makefile for building and running the Testie unit tests with clang
 #
-#   make          Build the test binary
-#   make test     Build the test binary and run it
+#   make build    Build the test binary
+#   make test     Build the test binary and run the tests
 #   make clean    Remove all build output
 # *************************************************************************************************
 
@@ -37,9 +37,11 @@ run_program = $(subst /,\,$(1))
 
 # Build rules *************************************************************************************
 
-.PHONY: all test run clean
+.PHONY: build test clean
 
-all: $(TARGET)
+.DEFAULT_GOAL := test
+
+build: $(TARGET)
 
 $(TARGET): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) $(LDFLAGS) $(LDLIBS) -o $@
@@ -48,9 +50,7 @@ $(BUILD_DIR)/%.o: %.c
 	@$(call mkdir_dir,$(@D))
 	$(CC) $(CPPFLAGS) $(CFLAGS) -MMD -MP -c $< -o $@
 
-test: $(TARGET) run
-
-run: $(TARGET)
+test: build
 	@$(call run_program,$(TARGET))
 
 clean:
