@@ -7,6 +7,8 @@
 
 /* Includes **************************************************************************************/
 
+#include <stdbool.h>
+
 #if defined(TESTIE_INCLUDE_CONFIG)
 #include TESTIE_INCLUDE_CONFIG
 #endif

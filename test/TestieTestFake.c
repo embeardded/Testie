@@ -4,7 +4,6 @@
 
 /* Includes **************************************************************************************/
 
-#include "Compiler.h"
 #include "TestieTestFake.h"
 
 
@@ -19,7 +18,7 @@ S_TESTIE_TEST_FAKE TestieTestFake;
 **************************************************************************************************/
 void Testie_FakeSetup(void)
 {
-    TestieTestFake.SetupExecuted = TRUE;
+    TestieTestFake.SetupExecuted = true;
 }
 
 
@@ -28,7 +27,7 @@ void Testie_FakeSetup(void)
 **************************************************************************************************/
 void Testie_FakeTearDown(void)
 {
-    TestieTestFake.TearDownExecuted = TRUE;
+    TestieTestFake.TearDownExecuted = true;
 }
 
 
@@ -39,7 +38,7 @@ void Testie_FakeTearDown(void)
 **************************************************************************************************/
 TEST(Testie_SuccessfulTest)
 {
-    ASSERT_TRUE(TRUE);
+    ASSERT_TRUE(true);
 }
 
 
@@ -57,7 +56,7 @@ TEST(Testie_FailingTest)
 **************************************************************************************************/
 TEST(Testie_AssertionTrueSuccessful)
 {
-    ASSERT_TRUE(TRUE);
+    ASSERT_TRUE(true);
 }
 
 
@@ -66,7 +65,7 @@ TEST(Testie_AssertionTrueSuccessful)
 **************************************************************************************************/
 TEST(Testie_AssertionTrueFailing)
 {
-    ASSERT_TRUE(FALSE);
+    ASSERT_TRUE(false);
 }
 
 
@@ -75,7 +74,7 @@ TEST(Testie_AssertionTrueFailing)
 **************************************************************************************************/
 TEST(Testie_AssertionFalseSuccessful)
 {
-    ASSERT_FALSE(FALSE);
+    ASSERT_FALSE(false);
 }
 
 
@@ -84,7 +83,7 @@ TEST(Testie_AssertionFalseSuccessful)
 **************************************************************************************************/
 TEST(Testie_AssertionFalseFailing)
 {
-    ASSERT_FALSE(TRUE);
+    ASSERT_FALSE(true);
 }
 
 
@@ -201,8 +200,8 @@ TEST(Testie_AssertionUInt32Failing)
 **************************************************************************************************/
 TEST(Testie_AssertionStringSuccessful)
 {
-    CHAR pcText1[] = "Knife";
-    CHAR pcText2[] = "Knife";
+    TESTIE_CHAR pcText1[] = "Knife";
+    TESTIE_CHAR pcText2[] = "Knife";
 
     ASSERT_EQUAL_STRING(pcText1, pcText2);
 }
@@ -213,8 +212,8 @@ TEST(Testie_AssertionStringSuccessful)
 **************************************************************************************************/
 TEST(Testie_AssertionStringFailing)
 {
-    CHAR pcText1[] = "Monitor";
-    CHAR pcText2[] = "Shack";
+    TESTIE_CHAR pcText1[] = "Monitor";
+    TESTIE_CHAR pcText2[] = "Shack";
 
     ASSERT_EQUAL_STRING(pcText1, pcText2);
 }
@@ -225,8 +224,8 @@ TEST(Testie_AssertionStringFailing)
 **************************************************************************************************/
 TEST(Testie_AssertionStringROMSuccessful)
 {
-    static TESTIE_ROM CHAR pcText1[] = "Knife";
-    CHAR pcText2[] = "Knife";
+    static TESTIE_ROM TESTIE_CHAR pcText1[] = "Knife";
+    TESTIE_CHAR pcText2[] = "Knife";
 
     ASSERT_EQUAL_STRING_ROM(pcText1, pcText2);
 }
@@ -237,8 +236,8 @@ TEST(Testie_AssertionStringROMSuccessful)
 **************************************************************************************************/
 TEST(Testie_AssertionStringROMFailing)
 {
-    static TESTIE_ROM CHAR pcText1[] = "Monitor";
-    CHAR pcText2[] = "Shack";
+    static TESTIE_ROM TESTIE_CHAR pcText1[] = "Monitor";
+    TESTIE_CHAR pcText2[] = "Shack";
 
     ASSERT_EQUAL_STRING_ROM(pcText1, pcText2);
 }
@@ -249,7 +248,7 @@ TEST(Testie_AssertionStringROMFailing)
 **************************************************************************************************/
 TEST(Testie_CaseWithExtremelyLongNameWhichIsTotallyAppropriateForThisUniqueAndExcellentTest)
 {
-    ASSERT_TRUE(TRUE);
+    ASSERT_TRUE(true);
 }
 
 
@@ -285,8 +284,8 @@ TEST(Testie_AssertionHexFailingWithValueZero)
 **************************************************************************************************/
 TEST(Testie_AssertionMemorySuccessful)
 {
-    BYTE pvArray1[] = {0x01, 0x02, 0x03};
-    BYTE pvArray2[] = {0x01, 0x02, 0x03};
+    TESTIE_UINT8 pvArray1[] = {0x01, 0x02, 0x03};
+    TESTIE_UINT8 pvArray2[] = {0x01, 0x02, 0x03};
 
     ASSERT_EQUAL_MEMORY(pvArray1, pvArray2, 3U);
 }
@@ -297,8 +296,8 @@ TEST(Testie_AssertionMemorySuccessful)
 **************************************************************************************************/
 TEST(Testie_AssertionMemoryFailing)
 {
-    BYTE pvArray1[] = {0x48, 0x65, 0x6C, 0x6C, 0x6F};
-    BYTE pvArray2[] = {0x0F, 0xD1, 0x2E, 0xC3, 0x4B};
+    TESTIE_UINT8 pvArray1[] = {0x48, 0x65, 0x6C, 0x6C, 0x6F};
+    TESTIE_UINT8 pvArray2[] = {0x0F, 0xD1, 0x2E, 0xC3, 0x4B};
 
     ASSERT_EQUAL_MEMORY(pvArray1, pvArray2, 5U);
 }
@@ -309,8 +308,8 @@ TEST(Testie_AssertionMemoryFailing)
 **************************************************************************************************/
 TEST(Testie_AssertionMemoryROMSuccessful)
 {
-    static TESTIE_ROM BYTE pvArray1[] = {0x01, 0x02, 0x03};
-    BYTE pvArray2[] = {0x01, 0x02, 0x03};
+    static TESTIE_ROM TESTIE_UINT8 pvArray1[] = {0x01, 0x02, 0x03};
+    TESTIE_UINT8 pvArray2[] = {0x01, 0x02, 0x03};
 
     ASSERT_EQUAL_MEMORY_ROM(pvArray1, pvArray2, 3U);
 }
@@ -321,8 +320,8 @@ TEST(Testie_AssertionMemoryROMSuccessful)
 **************************************************************************************************/
 TEST(Testie_AssertionMemoryROMFailing)
 {
-    static TESTIE_ROM BYTE pvArray1[] = {0x48, 0x65, 0x6C, 0x6C, 0x6F};
-    BYTE pvArray2[] = {0x0F, 0xD1, 0x2E, 0xC3, 0x4B};
+    static TESTIE_ROM TESTIE_UINT8 pvArray1[] = {0x48, 0x65, 0x6C, 0x6C, 0x6F};
+    TESTIE_UINT8 pvArray2[] = {0x0F, 0xD1, 0x2E, 0xC3, 0x4B};
 
     ASSERT_EQUAL_MEMORY_ROM(pvArray1, pvArray2, 5U);
 }

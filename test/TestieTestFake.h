@@ -14,8 +14,8 @@
 
 typedef struct
 {
-    BOOL SetupExecuted;
-    BOOL TearDownExecuted;
+    TESTIE_UINT8 SetupExecuted;
+    TESTIE_UINT8 TearDownExecuted;
 } S_TESTIE_TEST_FAKE;
 
 

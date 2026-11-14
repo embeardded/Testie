@@ -4,7 +4,6 @@
 
 /* Includes **************************************************************************************/
 
-#include "Compiler.h"
 #include "Testie.h"
 
 #include "OutputFake.h"
@@ -25,13 +24,13 @@ S_TESTIE sTestieBackup;
 * Input : TestSetup is the test setup function
 * Input : TestTearDown is the test tear down function
 **************************************************************************************************/
-#define Testie_RunTestToBuffer(Test)        Output.Buffer.Enabled = TRUE;               \
+#define Testie_RunTestToBuffer(Test)        Output.Buffer.Enabled = true;               \
                                             sTestieBackup = Testie;                     \
                                             Testie.Case.Setup    = Testie_FakeSetup;    \
                                             Testie.Case.TearDown = Testie_FakeTearDown; \
                                             TEST_RUN(Test);                             \
                                             Testie = sTestieBackup;                     \
-                                            Output.Buffer.Enabled = FALSE
+                                            Output.Buffer.Enabled = false
 
 
 /**************************************************************************************************
@@ -39,13 +38,13 @@ S_TESTIE sTestieBackup;
 *
 * Input : Suite is the test suite function
 **************************************************************************************************/
-#define Testie_RunSuiteToBuffer(Suite)      Output.Buffer.Enabled = TRUE;               \
+#define Testie_RunSuiteToBuffer(Suite)      Output.Buffer.Enabled = true;               \
                                             sTestieBackup = Testie;                     \
                                             Testie.Case.Setup    = Testie_FakeSetup;    \
                                             Testie.Case.TearDown = Testie_FakeTearDown; \
                                             TEST_SUITE_RUN(Suite);                      \
                                             Testie = sTestieBackup;                     \
-                                            Output.Buffer.Enabled = FALSE
+                                            Output.Buffer.Enabled = false
 
 
 /* Test setup and teardown ***********************************************************************/
@@ -55,8 +54,8 @@ S_TESTIE sTestieBackup;
 **************************************************************************************************/
 void Testie_Setup(void)
 {
-    TestieTestFake.SetupExecuted = FALSE;
-    TestieTestFake.TearDownExecuted = FALSE;
+    TestieTestFake.SetupExecuted = false;
+    TestieTestFake.TearDownExecuted = false;
 
     Output_ClearBuffer();
 }

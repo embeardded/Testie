@@ -7,7 +7,6 @@
 
 /* Includes **************************************************************************************/
 
-#include "Compiler.h"
 #include "Testie.h"
 
 
@@ -23,8 +22,8 @@ typedef struct
 {
     struct
     {
-        UINT8 Enabled;
-        CHAR  Line[OUTPUT_BUFFER_LINES][OUTPUT_BUFFER_WIDTH];
+        TESTIE_UINT8 Enabled;
+        TESTIE_CHAR  Line[OUTPUT_BUFFER_LINES][OUTPUT_BUFFER_WIDTH];
     } Buffer;
 } S_OUTPUT;
 
@@ -47,7 +46,7 @@ void Output_ClearBuffer(void);
 *
 * Input : cCharacter is the ASCII character
 **************************************************************************************************/
-void Output_Character(CHAR cCharacter);
+void Output_Character(TESTIE_CHAR cCharacter);
 
 
 /* End of module *********************************************************************************/ 

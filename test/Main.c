@@ -4,7 +4,6 @@
 
 /* Includes **************************************************************************************/
 
-#include "Compiler.h"
 #include "Testie.h"
 
 
@@ -20,13 +19,13 @@ extern void Testie_TearDown(void);
 /**************************************************************************************************
 * Desc  : Main function for Testie self tests
 **************************************************************************************************/
-MAIN()
+int main(void)
 {
     Testie.Case.Setup    = Testie_Setup;
     Testie.Case.TearDown = Testie_TearDown;
     TEST_SUITE_RUN(Testie_Self);
 
-    MAIN_RETURN();
+    return 0;
 }
 
 

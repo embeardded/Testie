@@ -21,8 +21,8 @@ S_OUTPUT Output;
 #pragma udata
 #endif
 
-UINT8 vOutputLineNo;
-UINT8 vOutputWidthNo;
+TESTIE_UINT8 vOutputLineNo;
+TESTIE_UINT8 vOutputWidthNo;
 
 
 /* Public functions ******************************************************************************/
@@ -32,7 +32,7 @@ UINT8 vOutputWidthNo;
 **************************************************************************************************/
 void Output_ClearBuffer(void)
 {
-    UINT8 vLineNo;
+    TESTIE_UINT8 vLineNo;
 
     vOutputLineNo  = 0U;
     vOutputWidthNo = 0U;
@@ -50,7 +50,7 @@ void Output_ClearBuffer(void)
 *
 * Input : cCharacter is the ASCII character
 **************************************************************************************************/
-void Output_Character(CHAR cCharacter)
+void Output_Character(TESTIE_CHAR cCharacter)
 {
     if (Output.Buffer.Enabled == 1U)
     {
