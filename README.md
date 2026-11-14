@@ -18,5 +18,5 @@ Testie solves exactly that by making the memory map part of the assertion:
 | --------------------------------------------------- | ------------------ | -------------- |
 | `ASSERT_EQUAL_STRING(Expected, Actual)`             | RAM                | RAM            |
 | `ASSERT_EQUAL_STRING_ROM(Expected, Actual)`         | ROM / flash        | RAM            |
-| `ASSERT_EQUAL_MEMORY(Expected, Actual, Length)`     | RAM | RAM          |
-| `ASSERT_EQUAL_MEMORY_ROM(Expected, Actual, Length)` | ROM | RAM          |
+| `ASSERT_EQUAL_MEMORY(Expected, Actual, Length)`     | RAM                | RAM            |
+| `ASSERT_EQUAL_MEMORY_ROM(Expected, Actual, Length)` | ROM / flash        | RAM            |
