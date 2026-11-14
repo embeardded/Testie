@@ -30,7 +30,7 @@ UINT8 vOutputWidthNo;
 /**************************************************************************************************
 * Desc  : Clear all characters in the output buffer. A cleared character is " ".
 **************************************************************************************************/
-VOID Output_ClearBuffer(VOID)
+void Output_ClearBuffer(void)
 {
     UINT8 vLineNo;
 
@@ -50,7 +50,7 @@ VOID Output_ClearBuffer(VOID)
 *
 * Input : cCharacter is the ASCII character
 **************************************************************************************************/
-VOID Output_Character(CHAR cCharacter)
+void Output_Character(CHAR cCharacter)
 {
     if (Output.Buffer.Enabled == 1U)
     {

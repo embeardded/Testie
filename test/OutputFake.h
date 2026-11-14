@@ -39,7 +39,7 @@ extern S_OUTPUT Output;
 /**************************************************************************************************
 * Desc  : Clear all characters in the output buffer. A cleared character is " ".
 **************************************************************************************************/
-VOID Output_ClearBuffer(VOID);
+void Output_ClearBuffer(void);
 
 
 /**************************************************************************************************
@@ -47,7 +47,7 @@ VOID Output_ClearBuffer(VOID);
 *
 * Input : cCharacter is the ASCII character
 **************************************************************************************************/
-VOID Output_Character(CHAR cCharacter);
+void Output_Character(CHAR cCharacter);
 
 
 /* End of module *********************************************************************************/ 

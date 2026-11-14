@@ -17,7 +17,7 @@ S_TESTIE_TEST_FAKE TestieTestFake;
 /**************************************************************************************************
 * Desc  : Function that can be used as test setup
 **************************************************************************************************/
-VOID Testie_FakeSetup(VOID)
+void Testie_FakeSetup(void)
 {
     TestieTestFake.SetupExecuted = TRUE;
 }
@@ -26,7 +26,7 @@ VOID Testie_FakeSetup(VOID)
 /**************************************************************************************************
 * Desc  : Function that can be used as test tear down
 **************************************************************************************************/
-VOID Testie_FakeTearDown(VOID)
+void Testie_FakeTearDown(void)
 {
     TestieTestFake.TearDownExecuted = TRUE;
 }

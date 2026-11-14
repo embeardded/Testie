@@ -53,7 +53,7 @@ S_TESTIE sTestieBackup;
 /**************************************************************************************************
 * Desc  : Test case setup
 **************************************************************************************************/
-VOID Testie_Setup(VOID)
+void Testie_Setup(void)
 {
     TestieTestFake.SetupExecuted = FALSE;
     TestieTestFake.TearDownExecuted = FALSE;
@@ -65,7 +65,7 @@ VOID Testie_Setup(VOID)
 /**************************************************************************************************
 * Desc  : Test case tear down
 **************************************************************************************************/
-VOID Testie_TearDown(VOID)
+void Testie_TearDown(void)
 {
 }
 

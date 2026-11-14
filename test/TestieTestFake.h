@@ -21,7 +21,7 @@ typedef struct
 
 /* Global variables ******************************************************************************/
 
-EXTERN S_TESTIE_TEST_FAKE TestieTestFake;
+extern S_TESTIE_TEST_FAKE TestieTestFake;
 
 
 /* Test setup and teardown ***********************************************************************/
@@ -29,13 +29,13 @@ EXTERN S_TESTIE_TEST_FAKE TestieTestFake;
 /**************************************************************************************************
 * Desc  : Function that can be used as test setup
 **************************************************************************************************/
-VOID Testie_FakeSetup(VOID);
+void Testie_FakeSetup(void);
 
 
 /**************************************************************************************************
 * Desc  : Function that can be used as test tear down
 **************************************************************************************************/
-VOID Testie_FakeTearDown(VOID);
+void Testie_FakeTearDown(void);
 
 
 /* Test case declarations ************************************************************************/

@@ -11,8 +11,8 @@
 /* Test suite declarations ***********************************************************************/
 
 TEST_SUITE_DECLARATION(Testie_Self);
-EXTERN VOID Testie_Setup(VOID);
-EXTERN VOID Testie_TearDown(VOID);
+extern void Testie_Setup(void);
+extern void Testie_TearDown(void);
 
 
 /* Main function *********************************************************************************/
